@@ -2476,7 +2476,7 @@ def parseMarkerTable(filename, geneToSym):
     headerLine = ifh.readline().rstrip("\r\n")
 
     sep = sepForFile(filename)
-    if headerLine in [seuratLine, seuratLine2, seuratLine4, seuratLine5]:
+    if headerLine in [seuratLine, seuratLine2, seuratLine3, seuratLine5]:
         logging.debug("Cluster marker file %s was recognized to be in Seurat format" % filename)
         # field 0 is not the gene ID, it has some weird suffix appended.
         headers = ["rowNameFromR", "pVal", "avg. logFC", "PCT1", "PCT2", "pVal adj.", "Cluster", "Gene"]
@@ -3035,7 +3035,7 @@ def readSampleNames(fname):
     sampleNames = []
     i = 1
     doneNames = set()
-    for row in lineFileNextRow(fname, noHeaders=False):
+    for row in lineFileNextRow(fname):#, noHeaders=True):
         metaName = row[0]
         if metaName=="":
             errAbort("invalid sample name - line %d in %s: sample name (first field) is empty" % (i, fname))

@@ -515,7 +515,7 @@ var cellbrowser = function() {
 
     function buildDownloadsPane(datasetInfo, desc) {
         var htmls = [];
-        if (datasetInfo.name==="") { // the top-level desc page has no methods/downloads, it's just a dataset list
+        if (datasetInfo.name==="" || desc.hideDownload===true || desc.hideDownload=="True" || desc.hideDownload=="true") { // the top-level desc page has no methods/downloads, it's just a dataset list
             $( "#pane3" ).hide();
             $( "#tabLink3" ).hide();
         } else {
