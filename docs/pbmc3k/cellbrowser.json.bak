@@ -1,0 +1,30 @@
+{
+  "name": "pbmc3k",
+  "shortLabel": "pbmc3k",
+  "exprMatrix": "exprMatrix.tsv.gz",
+  "meta": "meta.tsv",
+  "geneIdType": "auto",
+  "defColorField": "leiden",
+  "labelField": "leiden",
+  "enumFields": [
+    "leiden"
+  ],
+  "coords": [
+    {
+      "file": "/Users/markov/Projects/cellBrowser/docs/filtered_gene_bc_matrices/pca_coords.tsv",
+      "shortLabel": "pca"
+    },
+    {
+      "file": "/Users/markov/Projects/cellBrowser/docs/filtered_gene_bc_matrices/umap_coords.tsv",
+      "shortLabel": "UMAP"
+    }
+  ],
+  "markers": [
+    {
+      "file": "/Users/markov/Projects/cellBrowser/docs/filtered_gene_bc_matrices/markers.tsv",
+      "shortLabel": "Cluster Markers"
+    }
+  ],
+  "quickGenesFile": "quickGenes.tsv",
+  "inDir": ""
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Sample Dataset description",
+  "abstract": "Please edit desc.conf to change this text or comment out the \nabstract= line and create abstract.html in the same directory as desc.conf\n",
+  "methods": "\nPlease edit desc.conf to change this text or comment out the methods= line and create methods.html in the same directory as desc.conf\n",
+  "biorxiv_url": "https://www.biorxiv.org/content/123/123.full Strangelove et al.",
+  "custom": {
+    "sample barcode": "1231-HH11"
+  },
+  "inDir": "",
+  "coordFiles": [
+    "pca.coords.tsv.gz",
+    "UMAP.coords.tsv.gz"
+  ],
+  "matrixFile": "../pbmc3k/exprMatrix.tsv.gz"
+}

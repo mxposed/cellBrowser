@@ -1,0 +1,312 @@
+{
+  "fileVersions": {
+    "inMatrix": {
+      "fname": "/Users/markov/Projects/cellBrowser/docs/filtered_gene_bc_matrices/exprMatrix.tsv.gz",
+      "md5": "65969c8134",
+      "size": 3129382,
+      "mtime": "2020-12-29 04:48:20"
+    },
+    "outMatrix": {
+      "fname": "../pbmc3k/exprMatrix.tsv.gz",
+      "md5": "65969c8134",
+      "size": 3129382,
+      "mtime": "2020-12-29 04:51:21"
+    },
+    "inMeta": {
+      "fname": "/Users/markov/Projects/cellBrowser/docs/filtered_gene_bc_matrices/meta.tsv",
+      "md5": "903e82093d",
+      "size": 132860,
+      "mtime": "2020-12-29 04:50:09"
+    },
+    "outMeta": {
+      "fname": "../pbmc3k/meta.tsv",
+      "md5": "903e82093d",
+      "size": 132860,
+      "mtime": "2020-12-29 04:51:33"
+    },
+    "desc": {
+      "fname": "desc.conf",
+      "md5": "5a2b66543b",
+      "size": 2635,
+      "mtime": "2020-12-29 04:49:29"
+    },
+    "conf": {
+      "fname": "/Users/markov/Projects/cellBrowser/docs/filtered_gene_bc_matrices/cellbrowser.conf",
+      "md5": "bdc9544b4d",
+      "size": 781,
+      "mtime": "2020-12-29 04:51:18"
+    }
+  },
+  "matrixArrType": "Uint32",
+  "sampleCount": 2700,
+  "matrixWasFiltered": false,
+  "metaFields": [
+    {
+      "name": "cellId",
+      "label": "cellId",
+      "type": "uniqueString",
+      "maxSize": 16,
+      "diffValCount": 2700,
+      "md5": "c2f00752c7"
+    },
+    {
+      "name": "ExpressedGenes",
+      "label": "Expressed Genes",
+      "arrType": "float32",
+      "type": "int",
+      "diffValCount": 957,
+      "md5": "469d905339"
+    },
+    {
+      "name": "n_genes_by_counts",
+      "label": "n_genes_by_counts",
+      "arrType": "float32",
+      "type": "int",
+      "diffValCount": 966,
+      "md5": "b33d0a4376"
+    },
+    {
+      "name": "total_counts",
+      "label": "total_counts",
+      "arrType": "float32",
+      "type": "float",
+      "diffValCount": 1773,
+      "md5": "39980be120"
+    },
+    {
+      "name": "total_counts_mt",
+      "label": "total_counts_mt",
+      "arrType": "float32",
+      "type": "float",
+      "diffValCount": 175,
+      "md5": "8717d8baa6"
+    },
+    {
+      "name": "pct_counts_mt",
+      "label": "pct_counts_mt",
+      "arrType": "float32",
+      "type": "float",
+      "diffValCount": 2602,
+      "md5": "33365ed60d"
+    },
+    {
+      "name": "leiden",
+      "label": "leiden",
+      "type": "enum",
+      "valCounts": [
+        [
+          "0",
+          871
+        ],
+        [
+          "1",
+          477
+        ],
+        [
+          "2",
+          424
+        ],
+        [
+          "3",
+          347
+        ],
+        [
+          "4",
+          346
+        ],
+        [
+          "5",
+          173
+        ],
+        [
+          "6",
+          36
+        ],
+        [
+          "7",
+          16
+        ],
+        [
+          "8",
+          10
+        ]
+      ],
+      "arrType": "Uint8",
+      "diffValCount": 9,
+      "md5": "464e4e5c55"
+    }
+  ],
+  "labelField": "leiden",
+  "coords": [
+    {
+      "name": "coords_0",
+      "shortLabel": "pca",
+      "md5": "6354092399",
+      "minX": 0,
+      "maxX": 65535,
+      "minY": 0,
+      "maxY": 65535,
+      "type": "Uint16",
+      "labelMd5": "d41d8cd98f"
+    },
+    {
+      "name": "coords_1",
+      "shortLabel": "UMAP",
+      "md5": "5d43d6a3e1",
+      "minX": 0,
+      "maxX": 65535,
+      "minY": 0,
+      "maxY": 65535,
+      "type": "Uint16",
+      "labelMd5": "d41d8cd98f"
+    }
+  ],
+  "hasFiles": [
+    "datasetDesc"
+  ],
+  "topMarkers": {
+    "0": [
+      "RPS27",
+      "RPS25",
+      "RPS12",
+      "RPL31",
+      "RPS29"
+    ],
+    "1": [
+      "FTL",
+      "LYZ",
+      "TYROBP",
+      "S100A6",
+      "CST3"
+    ],
+    "2": [
+      "NKG7",
+      "CCL5",
+      "GZMA",
+      "B2M",
+      "CTSW"
+    ],
+    "3": [
+      "CD74",
+      "HLA-DRA",
+      "HLA-DQA1",
+      "CD79B",
+      "HLA-DPB1"
+    ],
+    "4": [
+      "MALAT1",
+      "CCR7",
+      "PRKCQ-AS1",
+      "RPS25",
+      "LDHB"
+    ],
+    "5": [
+      "FTH1",
+      "FTL",
+      "AIF1",
+      "LST1",
+      "TMSB4X"
+    ],
+    "6": [
+      "LSP1",
+      "TMSB10",
+      "LYZ",
+      "RPL5",
+      "GNB2L1"
+    ],
+    "7": [
+      "PPBP",
+      "GPX1",
+      "CDKN2D",
+      "GNG11",
+      "SPARC"
+    ],
+    "8": [
+      "OTUB1",
+      "PSMB9",
+      "B2M",
+      "ARGLU1",
+      "MDH1"
+    ]
+  },
+  "markers": [
+    {
+      "name": "markers_0",
+      "shortLabel": "Cluster Markers"
+    }
+  ],
+  "quickGenes": [
+    [
+      "RPS27",
+      "0"
+    ],
+    [
+      "RPS25",
+      "0"
+    ],
+    [
+      "FTL",
+      "1, 5"
+    ],
+    [
+      "LYZ",
+      "1"
+    ],
+    [
+      "NKG7",
+      "2"
+    ],
+    [
+      "CCL5",
+      "2"
+    ],
+    [
+      "CD74",
+      "3"
+    ],
+    [
+      "HLA-DRA",
+      "3"
+    ],
+    [
+      "MALAT1",
+      "4"
+    ],
+    [
+      "CCR7",
+      "4"
+    ],
+    [
+      "FTH1",
+      "5"
+    ],
+    [
+      "LSP1",
+      "6"
+    ],
+    [
+      "TMSB10",
+      "6"
+    ],
+    [
+      "PPBP",
+      "7"
+    ],
+    [
+      "GPX1",
+      "7"
+    ],
+    [
+      "OTUB1",
+      "8"
+    ],
+    [
+      "PSMB9",
+      "8"
+    ]
+  ],
+  "name": "pbmc3k",
+  "shortLabel": "pbmc3k",
+  "defColorField": "leiden",
+  "md5": "80e876f4f3"
+}

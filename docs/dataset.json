@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "shortLabel": "All Datasets",
+  "abstract": "This is a local Cell Browser installation, without dataset hierarchies.\n            Please select a dataset from the list on the left.<p>\n            <p>\n            See the documentation on <a target=_blank href=\"https://cellbrowser.readthedocs.io/collections.html\">\n            dataset hierarchies</a>.\n\n        ",
+  "datasets": [
+    {
+      "shortLabel": "pbmc3k",
+      "name": "pbmc3k",
+      "md5": "80e876f4f3",
+      "hasFiles": [
+        "datasetDesc"
+      ],
+      "sampleCount": 2700
+    }
+  ]
+}
