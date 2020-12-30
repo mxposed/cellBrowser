@@ -2187,7 +2187,7 @@ def readMatrixSampleNames(fname):
     else:
         return readHeaders(fname)[1:]
 
-def metaReorder(matrixFname, metaFname, fixedMetaFname):
+def metaReorder(matrixFname, metaFname, fixedMetaFname, display_single_meta=False):
     """ check and reorder the meta data, has to be in the same order as the
     expression matrix, write to fixedMetaFname. Remove single-value fields. """
 
@@ -2245,12 +2245,13 @@ def metaReorder(matrixFname, metaFname, fixedMetaFname):
 
     # find fields that contain only a single value
     skipFields = set()
-    for fieldIdx, values in iterItems(fieldValues):
-        #logging.debug("fieldIdx %d, values %s" % (fieldIdx, values))
-        if len(values)==1:
-            logging.info("Field %d, '%s', has only a single value. Removing this field from meta data." %
-                    (fieldIdx, headers[fieldIdx] ))
-            skipFields.add(fieldIdx)
+    if not display_single_meta:
+        for fieldIdx, values in iterItems(fieldValues):
+            #logging.debug("fieldIdx %d, values %s" % (fieldIdx, values))
+            if len(values)==1:
+                logging.info("Field %d, '%s', has only a single value. Removing this field from meta data." %
+                        (fieldIdx, headers[fieldIdx] ))
+                skipFields.add(fieldIdx)
 
     # write the header line, removing unused fields
     ofh.write("\t".join(sliceRow(headers, skipFields)))
@@ -3409,7 +3410,8 @@ def convertMeta(inDir, inConf, outConf, outDir, finalMetaFname):
     metaIdxFname = join(outDir, "meta.index")
 
     matrixFname = getAbsPath(inConf, "exprMatrix")
-    sampleNames, needFilterMatrix = metaReorder(matrixFname, metaFname, finalMetaFname)
+    display_single_meta = bool(inConf.get("display_single_meta", False))
+    sampleNames, needFilterMatrix = metaReorder(matrixFname, metaFname, finalMetaFname, display_single_meta=display_single_meta)
 
     outConf["sampleCount"] = len(sampleNames)
     outConf["matrixWasFiltered"] = needFilterMatrix

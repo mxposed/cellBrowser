@@ -4757,8 +4757,23 @@ var cellbrowser = function() {
     function buildMetaPanel(htmls) {
         /* add html strings for the meta panel to the left side bar */
         var metaFields = db.conf.metaFields;
+        var singleMeta = [];
+        var fullMeta = [];
         for (var i = 0; i < metaFields.length; i++) {
             var metaInfo = metaFields[i];
+            var valCounts = metaInfo["valCounts"];
+            var diffValCount = metaInfo["diffValCount"];
+            if (valCounts === undefined || valCounts.length > 1) {
+                metaInfo.__idx = i;
+                fullMeta.push(metaInfo);
+            } else {
+                var fieldLabel = metaInfo.label;
+                fieldLabel = fieldLabel.replace(/_/g, " ");
+                htmls.push('<div class="tpSingleMeta"><b>' + fieldLabel + '</b>: <span>' + valCounts[0][0] + '</span></div>');
+            }
+        }
+        for (var i = 0; i < fullMeta.length; i++) {
+            var metaInfo = fullMeta[i];
             var fieldLabel = metaInfo.label;
             fieldLabel = fieldLabel.replace(/_/g, " ");
             var fieldMouseOver = metaInfo.desc;
@@ -4768,13 +4783,13 @@ var cellbrowser = function() {
 
             var addClass = "";
             var addTitle="";
-            htmls.push("<div class='tpMetaBox' data-field-name='"+metaInfo.name+"' id='tpMetaBox_"+i+"'>");
+            htmls.push("<div class='tpMetaBox' data-field-name='"+metaInfo.name+"' id='tpMetaBox_"+metaInfo.__idx+"'>");
             if (isGrey) {
                 addClass=" tpMetaLabelGrey";
                 addTitle=" title='This field contains too many different values. You cannot click it to color on it.'";
             }
 
-            let divId = "tpMetaLabel_"+i;
+            let divId = "tpMetaLabel_"+metaInfo.__idx;
 
             htmls.push("<div id='"+divId+"' class='tpMetaLabel"+addClass+"'"+addTitle+">"+fieldLabel);
             if (fieldMouseOver)
@@ -4790,7 +4805,7 @@ var cellbrowser = function() {
             }
 
             htmls.push("<div class='tpMetaValue' style='width:"+(metaBarWidth-2*metaBarMargin)+"px"+styleAdd+
-                "' data-field-name='"+metaInfo.name+"' id='tpMeta_" + i + "'>&nbsp;</div>");
+                "' data-field-name='"+metaInfo.name+"' id='tpMeta_" + metaInfo.__idx + "'>&nbsp;</div>");
             htmls.push("</div>"); // tpMetaBox
         }
         htmls.push("<div style='background-color:white; float:right' id='tpMetaNote' style='display:none; height:1em'></div>");
